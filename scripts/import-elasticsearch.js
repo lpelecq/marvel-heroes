@@ -12,6 +12,7 @@ fs.createReadStream('all-heroes.csv')
     .on('data', (data) => dataset.push(data))
     .on('end', () => {
         console.log(`Imported ${dataset.length} lines`);
+        run().catch(console.error)
     });
 
 
@@ -87,4 +88,3 @@ async function run() {
     console.log(count)
 }
 
-run().catch(console.error)
